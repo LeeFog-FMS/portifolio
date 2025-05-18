@@ -1,0 +1,308 @@
+/* index.css - Estilos para a Página Inicial (Tema Elegante Gamer) */
+
+/* --- ESTILOS GERAIS E CURSOR --- */
+body {
+    background-color: #0a0a0a; /* Um preto um pouco menos intenso que o black puro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
+    color: #e0e0e0; /* Branco suave para texto principal */
+    font-size: 17px; /* Tamanho base para boa legibilidade */
+    line-height: 1.8; /* Espaçamento entre linhas generoso */
+    margin: 0;
+    padding: 0;
+    cursor: none; /* Para seu cursor customizado */
+    overflow-x: hidden; /* Evita scroll horizontal acidental */
+}
+
+#creeperCursor {
+    position: fixed;
+    pointer-events: none;
+    width: 150px; /* Seu tamanho definido */
+    height: auto;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transition: transform 0.05s linear;
+}
+
+.trail-dot { /* Rastro do cursor */
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 255, 0, 0.7); /* Verde do Creeper com leve transparência */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 1;
+    animation: fadeOutTrail 0.8s linear forwards;
+}
+
+@keyframes fadeOutTrail { /* Renomeado para evitar conflito se tiver outro fadeOut */
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.3); }
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    padding: 0 20px;
+}
+
+/* --- NAVEGAÇÃO (NO TOPO) --- */
+nav {
+    background-color: rgba(10, 10, 10, 0.8); /* Fundo da nav sutilmente transparente */
+    padding: 15px 0;
+    position: sticky; /* Faz a navegação fixar no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros conteúdos */
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco (suporte varia entre navegadores) */
+    border-bottom: 1px solid #2e5902; /* Linha verde sutil */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Removido padding da ul para controle total com flex */
+    display: flex;
+    justify-content: center; /* Centraliza os links */
+    align-items: center;
+}
+
+nav li {
+    margin: 0 15px; /* Espaçamento entre os links */
+}
+
+nav a {
+    color: #e0e0e0; /* Branco suave */
+    text-decoration: none;
+    font-size: 20px; /* Tamanho dos links da navegação */
+    font-weight: 600;  /* Semi-bold para destaque */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Pequeno espaçamento entre letras */
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+nav a.active { /* .active pode ser adicionado via JS para a página atual */
+    color: #34e0f5; /* Seu azul claro para hover/ativo */
+    background-color: rgba(52, 224, 245, 0.15); /* Fundo sutil no hover */
+    transform: translateY(-2px); /* Leve elevação */
+}
+
+/* --- CABEÇALHO (HEADER COM IMAGEM, TÍTULO E CITAÇÃO) --- */
+header {
+    padding: 50px 0; /* Espaçamento vertical generoso */
+    text-align: center; /* Centraliza todo o conteúdo do header */
+    margin-top: 20px; /* Espaço após a navegação sticky */
+}
+
+header .center img { /* Sua imagem de perfil */
+    width: 200px; /* Tamanho da imagem de perfil */
+    height: 200px;
+    border-radius: 50%; /* Imagem redonda */
+    border: 5px solid #2e5902; /* Borda verde principal */
+    box-shadow: 0 0 25px rgba(46, 89, 2, 0.6); /* Sombra verde "acesa" */
+    margin-bottom: 30px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+header h1 { /* "Educadora, Pesquisadora e Gamer" */
+    color: #e7d673; /* Seu amarelo para o título principal */
+    font-size: 2.8em; /* Tamanho grande e impactante */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif; /* Fonte com tema futurista/gamer. Adicione @import no topo do CSS ou link no HTML */
+                                        /* Fallback: 'Segoe UI', Tahoma, sans-serif */
+    /* Efeito de texto neon sutil */
+    text-shadow: 0 0 5px #e7d673,
+                 0 0 10px #e7d673,
+                 0 0 15px rgba(231, 214, 115, 0.5);
+}
+
+/* Estilo para a citação (mantendo consistência com o que discutimos) */
+.citacao-destaque {
+    background-color: rgba(26, 26, 26, 0.7); /* Fundo do card de citação */
+    border-left: 5px solid #34e0f5; /* Borda azul claro */
+    margin: 40px auto;
+    padding: 25px 30px;
+    max-width: 750px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(52, 224, 245, 0.2); /* Sombra azul clara */
+    position: relative;
+}
+
+.citacao-destaque p {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 1.7;
+    text-align: center; /* Centraliza o texto da citação */
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.citacao-destaque cite {
+    display: block;
+    color: #e7d673; /* Amarelo para o autor */
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.citacao-destaque::before { /* Aspas decorativas */
+    content: '“';
+    font-family: 'Times New Roman', Times, serif; /* Fonte com aspas serifadas clássicas */
+    font-size: 4.5em;
+    color: #34e0f5;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    opacity: 0.3;
+    line-height: 1;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+    padding: 30px 0;
+}
+
+main section {
+    background-color: rgba(17, 17, 17, 0.7); /* Fundo para cada seção, levemente transparente */
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid #222; /* Borda sutil para as seções */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+main section h3, /* "Sobre mim" */
+main section h4, /* "Formação" */
+main section h5 { /* "Interesses" */
+    font-family: 'Orbitron', sans-serif; /* Mesma fonte do H1 para consistência temática */
+    font-size: 2em; /* Tamanho dos títulos de seção */
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px; /* Espaço abaixo da linha */
+    border-bottom: 2px solid; /* Linha abaixo do título da seção */
+    letter-spacing: 1px;
+}
+
+main section h3 { color: #2e5902; border-bottom-color: #2e5902; } /* Verde para "Sobre mim" */
+main section h4 { color: #e7d673; border-bottom-color: #e7d673; } /* Amarelo para "Formação" */
+main section h5 { color: #34e0f5; border-bottom-color: #34e0f5; } /* Azul claro para "Interesses" */
+
+main section p {
+    font-size: 1.05em; /* Tamanho do texto nas seções */
+    color: #c0c0c0; /* Cinza um pouco mais claro para melhor leitura no fundo escuro da seção */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+main section p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 1px solid #222; /* Linha sutil no topo do rodapé */
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    margin: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.15); /* Aumenta o ícone no hover */
+}
+
+.social-links img.social-icon {
+    width: 40px; /* Ícones sociais um pouco maiores */
+    height: 40px;
+    filter: grayscale(50%) brightness(1.5); /* Efeito sutil nos ícones */
+    transition: filter 0.3s ease;
+}
+.social-links a:hover img.social-icon {
+    filter: grayscale(0%) brightness(1); /* Cor total no hover */
+}
+
+
+.copyright-notice p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #888; /* Cor suave para o copyright */
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    body { font-size: 16px; }
+
+    nav ul { justify-content: space-around; } /* Espaça melhor em telas menores */
+    nav li { margin: 0 5px; }
+    nav a { font-size: 16px; padding: 6px 8px; }
+
+    header .center img { width: 150px; height: 150px; margin-bottom: 20px; }
+    header h1 { font-size: 2em; margin-bottom: 20px; }
+    .citacao-destaque { margin: 30px auto; padding: 20px; }
+    .citacao-destaque p { font-size: 1.1em; }
+    .citacao-destaque::before { font-size: 3.5em; top: -5px; }
+
+    main section { padding: 25px; margin-bottom: 30px; }
+    main section h3, main section h4, main section h5 { font-size: 1.7em; margin-bottom: 20px; }
+    main section p { font-size: 1em; }
+
+    .social-links img.social-icon { width: 35px; height: 35px; }
+}
+
+/* --- IMPORTAÇÃO DE FONTE (Exemplo com Orbitron) --- */
+/* Adicione esta linha no TOPO do seu arquivo CSS ou
+   adicione o link da fonte no <head> do seu HTML:
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+/* Estilos para a lista de interesses na seção 'main' */
+main section .lista-interesses {
+    list-style-type: none; /* Remove os marcadores padrão (bolinhas pretas) */
+    padding-left: 20px;    /* Adiciona um recuo à esquerda para a lista */
+    margin-top: 20px;      /* Espaço acima da lista */
+    margin-bottom: 25px;   /* Espaço abaixo da lista */
+}
+
+main section .lista-interesses li {
+    color: #c0c0c0; /* Mesma cor dos parágrafos da seção */
+    font-size: 1.05em; /* Mesmo tamanho de fonte dos parágrafos */
+    text-align: justify; /* Justifica o texto de cada item */
+    padding-left: 25px; /* Espaço à esquerda do texto do item, para o marcador customizado */
+    margin-bottom: 15px; /* Espaço entre os itens da lista */
+    position: relative; /* Necessário para posicionar o marcador customizado */
+    line-height: 1.7; /* Consistente com o line-height dos parágrafos */
+}
+
+/* Marcador customizado para os itens da lista (sutilmente gamer) */
+main section .lista-interesses li::before {
+    content: '🎮'; /* Você pode usar '◆', '❖', '🎮', '>', '»' ou outro caractere Unicode */
+    position: absolute;
+    left: 0;
+    top: 0px; /* Ajuste fino vertical se necessário */
+    color: #2e5902; /* Cor verde principal do seu tema para o marcador */
+    font-size: 1em; /* Tamanho do marcador */
+    font-weight: bold;
+}

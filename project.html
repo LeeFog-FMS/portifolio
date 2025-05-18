@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Trabalhos Acadêmicos</title>
+    <link rel="stylesheet" href="project.css"> </head>
+<body>
+    <img id="creeperCursor" src="img/creeper.png" alt="Cursor Creeper" style="position: fixed; display: none; z-index: 9999; pointer-events: none; width: 32px; height: auto;">
+
+    <div class="container">
+        <header class="site-header">
+            <div class="site-title-container">
+                <h1>Meus Portifólio Acadêmico</h1> </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="project.html" class="active">Trabalhos Acadêmicos</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Jogos e Educação</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Publicações</h2>
+            <p>Aqui estão alguns dos meus trabalhos. Clique no link para visualizar o PDF.</p>
+
+            <div class="lista-trabalhos">
+                <article class="trabalho-item">
+                    <h3>GEOGRAFIA EM JOGO: GAMIFICAÇÃO E PEDAGOGIA FREINET</h3>
+                    <p>Trabalho apresentado no Congresso Brasileiro de Geógrafos (CBG) em 2024 na Universidade de São Paulo (USP)</p>
+                    <a href="arquivos/Artigo_CBG_2024.pdf" target="_blank" class="link-pdf">
+                        Ver PDF do Artigo
+                    </a>
+                </article>
+
+                <article class="trabalho-item">
+                    <h3>Título do Meu Segundo Trabalho</h3>
+                    <p>Outra descrição aqui para o segundo trabalho.</p>
+                    <a href="arquivos/nome-do-seu-arquivo-2.pdf" target="_blank" class="link-pdf">
+                        Ver PDF do Trabalho 2
+                    </a>
+                </article>
+
+                </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Letícia Fernanda</p>
+        </footer>
+    </div>
+
+    <script>
+        const creeperElement = document.getElementById('creeperCursor');
+        if (creeperElement) {
+            document.addEventListener('mousemove', function(e) {
+                creeperElement.style.left = (e.pageX + 5) + 'px';
+                creeperElement.style.top = (e.pageY + 5) + 'px';
+                if (creeperElement.style.display === 'none') {
+                    creeperElement.style.display = 'block';
+                }
+            });
+            document.body.style.cursor = 'none';
+            document.addEventListener('mouseleave', function() {
+                // creeperElement.style.display = 'none';
+            });
+             document.addEventListener('mouseenter', function() {
+                // if (creeperElement.style.display === 'none') {
+                //    creeperElement.style.display = 'block';
+                // }
+            });
+        }
+    </script>
+</body>
+</html>
