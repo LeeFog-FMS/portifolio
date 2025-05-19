@@ -2,15 +2,15 @@
 const creeperCursor = document.getElementById('creeperCursor');
 
 // Define os caminhos para as imagens (normal e clicado)
-const normalCreeperSrc = 'img/creeper.png'; // <-- SUBSTITUA
-const clickedCreeperSrc = 'img/explo.gif'; // <-- SUBSTITUA
+const normalCreeperSrc = 'img/crystal_cursor.png.PNG'; // <-- SUBSTITUA
+const clickedCreeperSrc = 'img/crystal_clicked.png.PNG'; // <-- SUBSTITUA
 
 // --- Evento principal: seguir o mouse e criar rastro ---
 document.addEventListener('mousemove', (e) => {
     // 1. Mover a imagem do Creeper (código existente)
     // Posiciona o canto superior esquerdo da imagem nas coordenadas do mouse
-    creeperCursor.style.left = e.clientX + -100 + 'px';
-    creeperCursor.style.top = e.clientY + 'px';
+    creeperCursor.style.left = (e.clientX - 30) + 'px'; // 60 / 2 = 30
+    creeperCursor.style.top = (e.clientY - 30) + 'px';  // 60 / 2 = 30
 
     // 2. Criar uma nova bolinha para o rastro
     const trailDot = document.createElement('div');
@@ -18,11 +18,11 @@ document.addEventListener('mousemove', (e) => {
 
     // 3. Posicionar a bolinha onde o mouse (e o Creeper) está
     // Podemos adicionar um pequeno offset para a bolinha aparecer ligeiramente abaixo/direita do centro do Creeper
-    const offsetX = 50; // Ajuste estes valores para mudar a posição das bolinhas em relação ao Creeper
-    const offsetY = 30; // Ajuste estes valores
+    const offsetX = 10; // Ajuste estes valores para mudar a posição das bolinhas em relação ao Creeper
+    const offsetY = 10; // Ajuste estes valores
 
-    trailDot.style.left = (e.clientX - 100 + offsetX) + 'px';
-    trailDot.style.top = (e.clientY + offsetY) + 'px';
+    trailDot.style.left = (e.clientX - 10 + offsetX) + 'px'; // 8 / 2 = 4
+    trailDot.style.top = (e.clientY - 10 + offsetY) + 'px';  // 8 / 2 = 4
 
     // 4. Adicionar a bolinha ao corpo do documento
     document.body.appendChild(trailDot);

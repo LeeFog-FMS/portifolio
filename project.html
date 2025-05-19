@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Trabalhos Acadêmicos</title>
-    <link rel="stylesheet" href="project.css"> </head>
+    <link rel="stylesheet" href="project.css"> 
+    <link rel="icon" href="img/logo_LF..png" type="image/png">
+</head>
 <body>
-    <img id="creeperCursor" src="img/creeper.png" alt="Cursor Creeper" style="position: fixed; display: none; z-index: 9999; pointer-events: none; width: 32px; height: auto;">
-
+    <img id="creeperCursor" src="img/crystal_cursor.png.PNG" alt="Cursor de Cristal">
     <div class="container">
         <header class="site-header">
             <div class="site-title-container">
-                <h1>Meus Portifólio Acadêmico</h1> </div>
+                <h1>Meu Portifólio Acadêmico</h1> </div>
             <nav>
                 <ul>
                     <li>
@@ -29,7 +30,7 @@
 
         <main>
             <h2>Publicações</h2>
-            <p>Aqui estão alguns dos meus trabalhos. Clique no link para visualizar o PDF.</p>
+            <p>Aqui estão alguns dos meus trabalhos publicados. Clique no link para visualizar o PDF.</p>
 
             <div class="lista-trabalhos">
                 <article class="trabalho-item">
@@ -56,26 +57,6 @@
         </footer>
     </div>
 
-    <script>
-        const creeperElement = document.getElementById('creeperCursor');
-        if (creeperElement) {
-            document.addEventListener('mousemove', function(e) {
-                creeperElement.style.left = (e.pageX + 5) + 'px';
-                creeperElement.style.top = (e.pageY + 5) + 'px';
-                if (creeperElement.style.display === 'none') {
-                    creeperElement.style.display = 'block';
-                }
-            });
-            document.body.style.cursor = 'none';
-            document.addEventListener('mouseleave', function() {
-                // creeperElement.style.display = 'none';
-            });
-             document.addEventListener('mouseenter', function() {
-                // if (creeperElement.style.display === 'none') {
-                //    creeperElement.style.display = 'block';
-                // }
-            });
-        }
-    </script>
+        <script src="script.js"></script>
 </body>
 </html>

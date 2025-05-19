@@ -1,124 +1,144 @@
-/* project.css - Estilos para a Página de Trabalhos Acadêmicos */
+/* project.css - Estilos para a Página de Trabalhos Acadêmicos (Tema Gamer Púrpura Vibrante) */
+
+/* --- IMPORTAÇÃO DE FONTE (Orbitron - Mantida para o tema gamer) --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 
 /* --- ESTILOS GERAIS E CURSOR (Consistente com index.css) --- */
 body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 16px; /* Um pouco maior para melhor legibilidade acadêmica */
-    line-height: 1.7; /* Melhor espaçamento entre linhas */
-    margin: 0; /* Remove margens padrão do body */
-    padding: 0; /* Remove paddings padrão do body */
-    cursor: none; /* Para usar seu cursor customizado */
+    background-color: #0A0A0A; /* COR: Fundo Principal (FP) - Preto Profundo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Mantendo a fonte do index.css para consistência */
+    color: #FFFFFF; /* COR: Texto Principal (TP) - Branco Puro */
+    font-size: 17px; /* Consistente com index.css */
+    line-height: 1.8; /* Consistente com index.css */
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 #creeperCursor {
     position: fixed;
     pointer-events: none;
-    width: 150px; /* Seu tamanho definido anteriormente */
-    height: auto;
+    width: 45px; /* Seu tamanho definido */
+    height: 50px;
     z-index: 9999;
     top: 0;
     left: 0;
     transition: transform 0.05s linear;
+    box-shadow: 0 0 10px #f887ff, 0 0 15px rgba(248, 135, 255, 0.5);
 }
 
-.trail-dot {
+.trail-dot { /* Rastro do cursor */
     position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: #0f0; /* Verde do Creeper */
+    width: 8px;
+    height: 8px;
+    background-color: #f887ff; /* COR: Destaque Secundário (DP2) - Rosa/Lilás Claro para o rastro */
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     opacity: 1;
-    animation: fadeOut 1s linear forwards;
+    animation: fadeOutTrailProject 0.6s linear forwards; /* Renomeado para evitar conflito se ambos CSS forem carregados juntos por engano */
+    box-shadow: 0 0 5px #f887ff, 0 0 10px #f887ff; /* Efeito de brilho no rastro */
 }
 
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+@keyframes fadeOutTrailProject { /* Renomeado */
+    0% { opacity: 0.8; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.2); }
 }
 
 /* --- CONTAINER PRINCIPAL --- */
 .container {
     width: 90%;
-    max-width: 1100px; /* Largura máxima para bom layout */
-    margin: 0 auto; /* Centraliza o container na página */
-    padding: 0 20px; /* Espaçamento lateral interno */
+    max-width: 1100px; /* Consistente com index.css */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* --- CABEÇALHO E NAVEGAÇÃO (Consistente com index.html estilizado) --- */
-.site-header {
-    background: #1a1a1a; /* Fundo escuro para o header, pode ser o mesmo do seu index.css */
-    color: #fff;
-    padding: 20px 0; /* Padding vertical */
-    border-bottom: 3px solid #2e5902; /* Sua borda verde principal */
-    margin-bottom: 40px; /* Espaço abaixo do header */
+/* --- CABEÇALHO E NAVEGAÇÃO (Consistente com index.css estilizado) --- */
+.site-header { /* Esta classe está no seu HTML de project.html */
+    background-color: rgba(41, 19, 46, 0.85); /* COR: Fundo de Elementos (FE) - Roxo Muito Escuro, com transparência */
+    color: #FFFFFF; /* COR: Texto Principal (TP) */
+    padding: 20px 0;
+    border-bottom: 1px solid #de004e; /* COR: Destaque Primário (DP1) - Rosa Choque (era 3px e verde antes) */
+    margin-bottom: 40px;
+    position: sticky; /* Adicionado para consistência com nav do index.html */
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Adicionado para consistência */
 }
 
-.site-title-container h1 { /* Estilo para "Meus Portfólio Acadêmico" */
-    color: #e7d673; /* Amarelo para destaque, como seus H2 */
+.site-title-container h1 { /* Estilo para "Meus Portifólio Acadêmico" */
+    color: #FFFFFF; /* COR: Texto Principal (TP) */
     text-align: center;
-    font-size: 2.5em; /* Tamanho grande e impactante */
+    font-size: 2.8em; /* Consistente com H1 do index.html */
     margin: 0;
-    padding: 0 10px; /* Evita que o texto cole nas bordas em telas menores */
+    padding: 0 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px; /* Consistente com H1 do index.html */
+    font-family: 'Orbitron', sans-serif; /* Fonte Gamer */
+    text-shadow: 0 0 7px #f887ff, /* COR: Destaque Secundário (DP2) - Sombra/brilho Lilás */
+                 0 0 12px #f887ff,
+                 0 0 20px rgba(248, 135, 255, 0.6);
 }
 
-header.site-header nav ul {
+/* A navegação no project.html está dentro de .site-header, então os seletores serão .site-header nav ... */
+.site-header nav ul {
     list-style-type: none;
-    margin: 20px 0 0 0; /* Margem acima da navegação, sem outras margens/paddings */
+    margin: 20px 0 0 0;
     padding: 0;
     display: flex;
-    justify-content: space-between; /* Distribui os links */
+    justify-content: center; /* Centralizando os links como no index.html */
     align-items: center;
     flex-wrap: wrap;
 }
 
-header.site-header nav li {
-    margin: 0 5px; /* Pequena margem lateral entre os links */
+.site-header nav li {
+    margin: 0 15px; /* Mesmo espaçamento do index.html */
 }
 
-header.site-header nav a {
-    color: white;
+.site-header nav a {
+    color: #FFFFFF; /* COR: Texto Principal (TP) */
     text-decoration: none;
+    font-size: 20px;   /* Mesmo tamanho do index.html */
+    font-weight: 600;  /* Mesmo peso do index.html */
     text-transform: uppercase;
-    font-size: 20px;   /* Tamanho da fonte para os links da navegação */
-    font-weight: 700;  /* Fonte mais grossa */
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: inline-block;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+    display: inline-block; /* Adicionado para padding funcionar corretamente */
 }
 
-header.site-header nav a:hover,
-header.site-header nav a.active { /* Estilo para link ativo e hover */
-    color: #34e0f5; /* Seu azul claro */
-    background-color: rgba(52, 224, 245, 0.1); /* Fundo sutil */
+.site-header nav a:hover,
+.site-header nav a.active {
+    color: #f887ff; /* COR: Destaque Secundário (DP2) - Rosa/Lilás para hover/ativo */
+    background-color: rgba(222, 0, 78, 0.15); /* COR: Destaque Primário (DP1) - Rosa Choque, com transparência para fundo do hover */
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px #f887ff; /* COR: Destaque Secundário (DP2) - Brilho no hover */
 }
 
 /* --- CONTEÚDO PRINCIPAL (MAIN) --- */
 main {
-    padding: 20px 0; /* Espaçamento vertical no conteúdo principal */
+    padding: 30px 0; /* Consistente com index.css */
 }
 
 main h2 { /* Estilo para "Publicações" */
-    color: #e7d673; /* Amarelo, como os títulos de seção */
-    font-size: 2.2em; /* Tamanho destacado */
+    color: #de004e; /* COR: Destaque Primário (DP1) - Rosa Choque para o título principal da seção */
+    font-size: 2.5em; /* Tamanho destacado */
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Aumentado um pouco */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-family: 'Orbitron', sans-serif; /* Fonte Gamer */
+    text-shadow: 0 0 8px rgba(222, 0, 78, 0.7); /* Sombra/brilho */
 }
 
 main > p { /* Parágrafo introdutório logo abaixo do h2 */
     text-align: center;
-    font-size: 1.1em;
-    color: #ccc; /* Cinza claro para contraste suave */
-    margin-bottom: 40px; /* Espaço antes da lista de trabalhos */
-    max-width: 700px; /* Limita largura para melhor leitura */
+    font-size: 1.15em; /* Um pouco maior */
+    color: #E0E0E0; /* COR: Próxima ao Texto Principal (TP) */
+    margin-bottom: 45px; /* Aumentado */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -129,101 +149,121 @@ main > p { /* Parágrafo introdutório logo abaixo do h2 */
 }
 
 .trabalho-item {
-    background-color: #111; /* Fundo do card um pouco mais claro que o preto total */
-    border: 1px solid #2e5902; /* Borda verde sutil */
-    padding: 25px 30px; /* Espaçamento interno generoso */
-    margin-bottom: 30px;
-    border-radius: 8px; /* Cantos arredondados */
-    box-shadow: 0 5px 15px rgba(46, 89, 2, 0.15); /* Sombra verde mais suave e difusa */
+    background-color: rgba(41, 19, 46, 0.7); /* COR: Fundo de Elementos (FE) - Roxo Muito Escuro, com transparência */
+    border: 1px solid #321450; /* COR: Acento (AC) - Roxo Escuro para borda sutil (era verde antes) */
+    padding: 30px 35px; /* Aumentado padding */
+    margin-bottom: 35px; /* Aumentado espaçamento */
+    border-radius: 12px; /* Consistente com seções do index.css */
+    box-shadow: 0 5px 20px rgba(222, 0, 78, 0.2); /* COR: Sombra com Destaque Primário (DP1) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .trabalho-item:hover {
-    transform: translateY(-5px); /* Leve elevação no hover */
-    box-shadow: 0 8px 20px rgba(46, 89, 2, 0.25); /* Sombra mais pronunciada no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(248, 135, 255, 0.3); /* COR: Sombra com Destaque Secundário (DP2) no hover */
 }
 
 .trabalho-item h3 { /* Título do trabalho */
-    color: #34e0f5; /* Seu azul claro para os títulos dos trabalhos */
-    font-size: 1.6em; /* Tamanho bom para o título do trabalho */
+    color: #f887ff; /* COR: Destaque Secundário (DP2) - Lilás para os títulos dos trabalhos */
+    font-size: 1.8em; /* Aumentado */
+    font-family: 'Orbitron', sans-serif; /* Fonte Gamer */
     margin-top: 0;
-    margin-bottom: 10px;
-    line-height: 1.3;
+    margin-bottom: 15px; /* Aumentado */
+    line-height: 1.4;
+    text-shadow: 0 0 5px rgba(248, 135, 255, 0.5); /* Sombra/brilho */
 }
 
 .trabalho-item p { /* Descrição do trabalho */
-    font-size: 1em; /* Tamanho padrão do texto */
-    color: #ddd;   /* Cinza claro para a descrição */
-    text-align: left; /* Alinhamento à esquerda para descrições mais longas */
-    margin-bottom: 20px; /* Espaço antes do link do PDF */
-    padding: 0; /* Remove padding herdado se houver */
+    font-size: 1.1em; /* Consistente com parágrafos do index.css */
+    color: #E0E0E0;   /* COR: Próxima ao Texto Principal (TP) */
+    text-align: justify; /* Mudado de left para justify */
+    margin-bottom: 25px;
+    padding: 0;
 }
 
 .link-pdf { /* Link para o PDF */
     display: inline-block;
-    background-color: #2e5902; /* Sua cor verde principal */
-    color: white !important; /* Garante que o texto seja branco */
-    padding: 12px 25px; /* Botão com bom tamanho */
+    background-color: #de004e; /* COR: Destaque Primário (DP1) - Rosa Choque */
+    color: #FFFFFF !important; /* COR: Texto Principal (TP) */
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 25px; /* Formato de pílula */
+    border-radius: 25px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 0.9em;
-    border: 2px solid transparent; /* Borda transparente para transição */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em; /* Um pouco maior */
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .link-pdf:hover {
-    background-color: #34e0f5; /* Seu azul claro no hover */
-    color: black !important; /* Texto preto para contraste */
-    border-color: #34e0f5;
-    transform: scale(1.05); /* Leve aumento no hover */
+    background-color: #f887ff; /* COR: Destaque Secundário (DP2) - Lilás no hover */
+    color: #0A0A0A !important; /* COR: Fundo Principal (FP) - Texto escuro para contraste */
+    border-color: #f887ff; /* COR: Destaque Secundário (DP2) */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(248, 135, 255, 0.4); /* Sombra Lilás no hover */
 }
 
 /* --- RODAPÉ (Estilo para o rodapé simples do project.html) --- */
-footer {
+footer { /* Rodapé do project.html é diferente do index.html */
     text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
-    border-top: 1px solid #222; /* Linha sutil no topo do rodapé */
-    color: #777; /* Cor suave para o copyright */
+    padding: 40px 0; /* Consistente com index.css */
+    margin-top: 30px; /* Consistente com index.css */
+    border-top: 1px solid #321450; /* COR: Acento (AC) - Roxo Escuro */
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.95em; /* Consistente com index.css */
+    color: #888; /* Cinza para texto discreto */
+    letter-spacing: 0.5px; /* Consistente com index.css */
 }
 
 /* --- Responsividade (Ajustes básicos) --- */
 @media (max-width: 768px) {
+    body { font-size: 16px; } /* Mantido */
+
     .site-title-container h1 {
-        font-size: 2em; /* Reduz o título principal em telas menores */
+        font-size: 2em;
+        letter-spacing: 2px; /* Ajustado */
     }
 
-    header.site-header nav ul {
-        justify-content: center; /* Centraliza os links da navegação em telas menores */
+    .site-header nav ul { /* No project.html, a nav está dentro de .site-header */
+        justify-content: space-around; /* Era center, mudado para space-around para melhor uso do espaço */
         padding: 10px 0;
     }
 
-    header.site-header nav li {
-        margin: 5px 10px; /* Ajusta margem para itens empilhados */
+    .site-header nav li {
+        margin: 5px 8px; /* Ajustado */
     }
 
-    header.site-header nav a {
-        font-size: 18px; /* Reduz um pouco os links da navegação */
-        padding: 8px 12px;
+    .site-header nav a {
+        font-size: 16px; /* Era 18px, ajustado para consistência com index.css responsivo */
+        padding: 6px 10px; /* Ajustado */
+        letter-spacing: 0.5px;
     }
 
     main h2 {
-        font-size: 1.8em;
+        font-size: 2em; /* Aumentado um pouco */
+        letter-spacing: 1px;
+    }
+    main > p {
+        font-size: 1.1em; /* Aumentado */
     }
 
     .trabalho-item {
-        padding: 20px;
+        padding: 20px 25px; /* Ajustado */
     }
 
     .trabalho-item h3 {
-        font-size: 1.4em;
+        font-size: 1.5em; /* Aumentado */
+    }
+    .trabalho-item p {
+        font-size: 1em; /* Mantido */
+    }
+    .link-pdf {
+        font-size: 0.9em;
+        padding: 10px 20px;
     }
 }

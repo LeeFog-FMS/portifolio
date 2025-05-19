@@ -2,9 +2,9 @@
 
 /* --- ESTILOS GERAIS E CURSOR --- */
 body {
-    background-color: #0a0a0a; /* Um preto um pouco menos intenso que o black puro */
+    background-color: #0A0A0A; /* Um preto um pouco menos intenso que o black puro */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
-    color: #e0e0e0; /* Branco suave para texto principal */
+    color: #FFFFFF; /* Branco suave para texto principal */
     font-size: 17px; /* Tamanho base para boa legibilidade */
     line-height: 1.8; /* Espaçamento entre linhas generoso */
     margin: 0;
@@ -16,24 +16,26 @@ body {
 #creeperCursor {
     position: fixed;
     pointer-events: none;
-    width: 150px; /* Seu tamanho definido */
-    height: auto;
+    width: 45px; /* Seu tamanho definido */
+    height: 50px;
     z-index: 9999;
     top: 0;
     left: 0;
     transition: transform 0.05s linear;
+    box-shadow: 0 0 10px #f887ff, 0 0 15px rgba(248, 135, 255, 0.5);
 }
 
 .trail-dot { /* Rastro do cursor */
     position: fixed;
     width: 20px;
     height: 20px;
-    background-color: rgba(0, 255, 0, 0.7); /* Verde do Creeper com leve transparência */
+    background-color: #f887ff; /* Verde do Creeper com leve transparência */
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     opacity: 1;
     animation: fadeOutTrail 0.8s linear forwards;
+    box-shadow: 0 0 5px #f887ff, 0 0 10px #f887ff;
 }
 
 @keyframes fadeOutTrail { /* Renomeado para evitar conflito se tiver outro fadeOut */
@@ -51,13 +53,13 @@ body {
 
 /* --- NAVEGAÇÃO (NO TOPO) --- */
 nav {
-    background-color: rgba(10, 10, 10, 0.8); /* Fundo da nav sutilmente transparente */
+    background-color: rgba(41, 19, 46, 0.85); /* Fundo da nav sutilmente transparente */
     padding: 15px 0;
     position: sticky; /* Faz a navegação fixar no topo ao rolar */
     top: 0;
     z-index: 1000; /* Garante que fique acima de outros conteúdos */
     backdrop-filter: blur(5px); /* Efeito de vidro fosco (suporte varia entre navegadores) */
-    border-bottom: 1px solid #2e5902; /* Linha verde sutil */
+    border-bottom: 1px solid #de004e; /* Linha verde sutil */
 }
 
 nav ul {
@@ -74,7 +76,7 @@ nav li {
 }
 
 nav a {
-    color: #e0e0e0; /* Branco suave */
+    color: #FFFFFF; /* Branco suave */
     text-decoration: none;
     font-size: 20px; /* Tamanho dos links da navegação */
     font-weight: 600;  /* Semi-bold para destaque */
@@ -87,9 +89,10 @@ nav a {
 
 nav a:hover,
 nav a.active { /* .active pode ser adicionado via JS para a página atual */
-    color: #34e0f5; /* Seu azul claro para hover/ativo */
-    background-color: rgba(52, 224, 245, 0.15); /* Fundo sutil no hover */
+    color: #f887ff; /* Seu azul claro para hover/ativo */
+    background-color: rgba(222, 0, 78, 0.15); /* Fundo sutil no hover */
     transform: translateY(-2px); /* Leve elevação */
+    text-shadow: 0 0 8px #f887ff;
 }
 
 /* --- CABEÇALHO (HEADER COM IMAGEM, TÍTULO E CITAÇÃO) --- */
@@ -97,20 +100,21 @@ header {
     padding: 50px 0; /* Espaçamento vertical generoso */
     text-align: center; /* Centraliza todo o conteúdo do header */
     margin-top: 20px; /* Espaço após a navegação sticky */
+    position: relative;
 }
 
 header .center img { /* Sua imagem de perfil */
     width: 200px; /* Tamanho da imagem de perfil */
     height: 200px;
     border-radius: 50%; /* Imagem redonda */
-    border: 5px solid #2e5902; /* Borda verde principal */
-    box-shadow: 0 0 25px rgba(46, 89, 2, 0.6); /* Sombra verde "acesa" */
+    border: 5px solid #de004e; /* Borda verde principal */
+    box-shadow: 0 0 30px rgba(222, 0, 78, 0.7), inset 0 0 15px rgba(222, 0, 78, 0.3); /* Sombra verde "acesa" */
     margin-bottom: 30px;
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
 }
 
 header h1 { /* "Educadora, Pesquisadora e Gamer" */
-    color: #e7d673; /* Seu amarelo para o título principal */
+    color: #FFFFFF; /* Seu amarelo para o título principal */
     font-size: 2.8em; /* Tamanho grande e impactante */
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -118,25 +122,25 @@ header h1 { /* "Educadora, Pesquisadora e Gamer" */
     font-family: 'Orbitron', sans-serif; /* Fonte com tema futurista/gamer. Adicione @import no topo do CSS ou link no HTML */
                                         /* Fallback: 'Segoe UI', Tahoma, sans-serif */
     /* Efeito de texto neon sutil */
-    text-shadow: 0 0 5px #e7d673,
-                 0 0 10px #e7d673,
-                 0 0 15px rgba(231, 214, 115, 0.5);
+    text-shadow: 0 0 7px #f887ff, /* COR: Destaque Secundário (DP2) - Sombra/brilho Lilás */
+                 0 0 12px #f887ff,
+                 0 0 20px rgba(248, 135, 255, 0.6);
 }
 
 /* Estilo para a citação (mantendo consistência com o que discutimos) */
 .citacao-destaque {
-    background-color: rgba(26, 26, 26, 0.7); /* Fundo do card de citação */
-    border-left: 5px solid #34e0f5; /* Borda azul claro */
+    background-color: rgba(41, 19, 46, 0.8); /* Fundo do card de citação */
+    border-left: 5px solid #f887ff; /* Borda azul claro */
     margin: 40px auto;
     padding: 25px 30px;
     max-width: 750px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(52, 224, 245, 0.2); /* Sombra azul clara */
+    box-shadow: 0 4px 10px rgba(248, 135, 255, 0.25); /* Sombra azul clara */
     position: relative;
 }
 
 .citacao-destaque p {
-    color: #f0f0f0;
+    color: #E0E0E0;
     font-size: 1.2em;
     line-height: 1.7;
     text-align: center; /* Centraliza o texto da citação */
@@ -146,21 +150,22 @@ header h1 { /* "Educadora, Pesquisadora e Gamer" */
 
 .citacao-destaque cite {
     display: block;
-    color: #e7d673; /* Amarelo para o autor */
-    font-size: 1em;
+    color: #de004e; /* Amarelo para o autor */
+    font-size: 1.05em;
     text-align: right;
     font-weight: bold;
     font-style: normal;
+     text-shadow: 0 0 5px rgba(222, 0, 78, 0.5);
 }
 
 .citacao-destaque::before { /* Aspas decorativas */
     content: '“';
     font-family: 'Times New Roman', Times, serif; /* Fonte com aspas serifadas clássicas */
-    font-size: 4.5em;
-    color: #34e0f5;
+    font-size: 5em;
+    color: #f887ff;
     position: absolute;
     left: 10px;
-    top: -10px;
+    top: -15px;
     opacity: 0.3;
     line-height: 1;
 }
@@ -171,35 +176,36 @@ main {
 }
 
 main section {
-    background-color: rgba(17, 17, 17, 0.7); /* Fundo para cada seção, levemente transparente */
+    background-color: rgba(41, 19, 46, 0.7); /* Fundo para cada seção, levemente transparente */
     padding: 35px;
     margin-bottom: 40px;
     border-radius: 10px;
-    border: 1px solid #222; /* Borda sutil para as seções */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    border: 1px solid #321450; /* Borda sutil para as seções */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
 }
 
 main section h3, /* "Sobre mim" */
 main section h4, /* "Formação" */
 main section h5 { /* "Interesses" */
     font-family: 'Orbitron', sans-serif; /* Mesma fonte do H1 para consistência temática */
-    font-size: 2em; /* Tamanho dos títulos de seção */
+    font-size: 2.2em; /* Tamanho dos títulos de seção */
     margin-top: 0;
-    margin-bottom: 25px;
-    padding-bottom: 10px; /* Espaço abaixo da linha */
-    border-bottom: 2px solid; /* Linha abaixo do título da seção */
-    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid; /* Linha abaixo do título da seção */
+    letter-spacing: 1.5px;
 }
 
-main section h3 { color: #2e5902; border-bottom-color: #2e5902; } /* Verde para "Sobre mim" */
-main section h4 { color: #e7d673; border-bottom-color: #e7d673; } /* Amarelo para "Formação" */
-main section h5 { color: #34e0f5; border-bottom-color: #34e0f5; } /* Azul claro para "Interesses" */
+main section h3 { color: #de004e; border-bottom-color: #de004e; text-shadow: 0 0 8px rgba(222, 0, 78, 0.7); } /* DP1 - Rosa Choque */
+main section h4 { color: #f887ff; border-bottom-color: #f887ff; text-shadow: 0 0 8px rgba(248, 135, 255, 0.7); } /* DP2 - Lilás */
+main section h5 { color: #860029; border-bottom-color: #860029; text-shadow: 0 0 8px rgba(134, 0, 41, 0.7); } /* AE - Vinho/Bordô (usado como um terceiro destaque aqui) */
 
 main section p {
-    font-size: 1.05em; /* Tamanho do texto nas seções */
-    color: #c0c0c0; /* Cinza um pouco mais claro para melhor leitura no fundo escuro da seção */
+    font-size: 1.1em; /* Tamanho do texto nas seções */
+    color: #E0E0E0; /* Cinza um pouco mais claro para melhor leitura no fundo escuro da seção */
     text-align: justify;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 main section p:last-child {
@@ -212,32 +218,33 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
     margin-top: 30px;
-    border-top: 1px solid #222; /* Linha sutil no topo do rodapé */
+    border-top: 1px solid #321450; /* Linha sutil no topo do rodapé */
 }
 
 .social-links {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .social-links a {
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 15px;
     display: inline-flex;
     align-items: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-links a:hover {
-    transform: scale(1.15); /* Aumenta o ícone no hover */
+    filter: drop-shadow(0 0 6px #f887ff); /* COR: Destaque Secundário (DP2) - Brilho Lilás */
+    transform: scale(1.1);
 }
 
 .social-links img.social-icon {
-    width: 40px; /* Ícones sociais um pouco maiores */
-    height: 40px;
+    width: 250px; /* Ícones sociais um pouco maiores */
+    height: 250px;
     filter: grayscale(50%) brightness(1.5); /* Efeito sutil nos ícones */
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 .social-links a:hover img.social-icon {
     filter: grayscale(0%) brightness(1); /* Cor total no hover */
@@ -246,8 +253,9 @@ footer {
 
 .copyright-notice p {
     margin: 0;
-    font-size: 0.9em;
-    color: #888; /* Cor suave para o copyright */
+    font-size: 0.95em;
+    color: #888; /* Cinza para texto discreto */
+    letter-spacing: 0.5px;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -258,17 +266,19 @@ footer {
     nav li { margin: 0 5px; }
     nav a { font-size: 16px; padding: 6px 8px; }
 
-    header .center img { width: 150px; height: 150px; margin-bottom: 20px; }
-    header h1 { font-size: 2em; margin-bottom: 20px; }
-    .citacao-destaque { margin: 30px auto; padding: 20px; }
-    .citacao-destaque p { font-size: 1.1em; }
-    .citacao-destaque::before { font-size: 3.5em; top: -5px; }
+     header .center img { width: 150px; height: 150px; margin-bottom: 20px; border-width: 4px; }
+    header h1 { font-size: 2.2em; margin-bottom: 25px; letter-spacing: 2px; }
+    .citacao-destaque { margin: 30px auto; padding: 20px; max-width: 90%; }
+    .citacao-destaque p { font-size: 1.15em; }
+    .citacao-destaque::before { font-size: 4em; top: -10px; }
 
     main section { padding: 25px; margin-bottom: 30px; }
-    main section h3, main section h4, main section h5 { font-size: 1.7em; margin-bottom: 20px; }
+    main section h3, main section h4, main section h5 { font-size: 1.8em; margin-bottom: 20px; letter-spacing: 1px; }
     main section p { font-size: 1em; }
+    main section .lista-interesses li { font-size: 1em; padding-left: 25px; }
+    main section .lista-interesses li::before { font-size: 1.1em; }
 
-    .social-links img.social-icon { width: 35px; height: 35px; }
+    .social-links img.social-icon { width: 38px; height: 38px;}
 }
 
 /* --- IMPORTAÇÃO DE FONTE (Exemplo com Orbitron) --- */
@@ -287,22 +297,23 @@ main section .lista-interesses {
 }
 
 main section .lista-interesses li {
-    color: #c0c0c0; /* Mesma cor dos parágrafos da seção */
-    font-size: 1.05em; /* Mesmo tamanho de fonte dos parágrafos */
+    color: #E0E0E0; /* Mesma cor dos parágrafos da seção */
+    font-size: 1.1em; /* Mesmo tamanho de fonte dos parágrafos */
     text-align: justify; /* Justifica o texto de cada item */
-    padding-left: 25px; /* Espaço à esquerda do texto do item, para o marcador customizado */
-    margin-bottom: 15px; /* Espaço entre os itens da lista */
+    padding-left: 30px; /* Espaço à esquerda do texto do item, para o marcador customizado */
+    margin-bottom: 18px; /* Espaço entre os itens da lista */
     position: relative; /* Necessário para posicionar o marcador customizado */
     line-height: 1.7; /* Consistente com o line-height dos parágrafos */
 }
 
 /* Marcador customizado para os itens da lista (sutilmente gamer) */
 main section .lista-interesses li::before {
-    content: '🎮'; /* Você pode usar '◆', '❖', '🎮', '>', '»' ou outro caractere Unicode */
+    content: '❖'; /* Você pode usar '◆', '❖', '🎮', '>', '»' ou outro caractere Unicode */
     position: absolute;
     left: 0;
     top: 0px; /* Ajuste fino vertical se necessário */
-    color: #2e5902; /* Cor verde principal do seu tema para o marcador */
-    font-size: 1em; /* Tamanho do marcador */
+    color: #de004e; /* Cor verde principal do seu tema para o marcador */
+    font-size: 1.2em; /* Tamanho do marcador */
     font-weight: bold;
+    text-shadow: 0 0 5px #de004e;
 }
