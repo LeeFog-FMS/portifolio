@@ -9,38 +9,8 @@ body {
     line-height: 1.8; /* Espaçamento entre linhas generoso */
     margin: 0;
     padding: 0;
-    cursor: none; /* Para seu cursor customizado */
+    cursor: auto; /* Para seu cursor customizado */
     overflow-x: hidden; /* Evita scroll horizontal acidental */
-}
-
-#creeperCursor {
-    position: fixed;
-    pointer-events: none;
-    width: 45px; /* Seu tamanho definido */
-    height: 50px;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    transition: transform 0.05s linear;
-    box-shadow: 0 0 10px #f887ff, 0 0 15px rgba(248, 135, 255, 0.5);
-}
-
-.trail-dot { /* Rastro do cursor */
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: #f887ff; /* Verde do Creeper com leve transparência */
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 1;
-    animation: fadeOutTrail 0.8s linear forwards;
-    box-shadow: 0 0 5px #f887ff, 0 0 10px #f887ff;
-}
-
-@keyframes fadeOutTrail { /* Renomeado para evitar conflito se tiver outro fadeOut */
-    0% { opacity: 0.7; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.3); }
 }
 
 /* --- CONTAINER PRINCIPAL --- */

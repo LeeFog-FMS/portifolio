@@ -12,38 +12,8 @@ body {
     line-height: 1.8; /* Consistente com index.css */
     margin: 0;
     padding: 0;
-    cursor: none;
+    cursor: auto;
     overflow-x: hidden; /* Evita scroll horizontal */
-}
-
-#creeperCursor {
-    position: fixed;
-    pointer-events: none;
-    width: 45px; /* Seu tamanho definido */
-    height: 50px;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    transition: transform 0.05s linear;
-    box-shadow: 0 0 10px #f887ff, 0 0 15px rgba(248, 135, 255, 0.5);
-}
-
-.trail-dot { /* Rastro do cursor */
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background-color: #f887ff; /* COR: Destaque Secundário (DP2) - Rosa/Lilás Claro para o rastro */
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 1;
-    animation: fadeOutTrailProject 0.6s linear forwards; /* Renomeado para evitar conflito se ambos CSS forem carregados juntos por engano */
-    box-shadow: 0 0 5px #f887ff, 0 0 10px #f887ff; /* Efeito de brilho no rastro */
-}
-
-@keyframes fadeOutTrailProject { /* Renomeado */
-    0% { opacity: 0.8; transform: scale(1.2); }
-    100% { opacity: 0; transform: scale(0.2); }
 }
 
 /* --- CONTAINER PRINCIPAL --- */
@@ -119,7 +89,7 @@ body {
 
 /* --- CONTEÚDO PRINCIPAL (MAIN) --- */
 main {
-    padding: 30px 0; /* Consistente com index.css */
+    padding: 0px 0; /* Consistente com index.css */
 }
 
 main h2 { /* Estilo para "Publicações" */

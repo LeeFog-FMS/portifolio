@@ -1,0 +1,495 @@
+/* contact.css - Estilos Completos para a Página "Hub de Jogos & Educação" */
+/* Paleta "Floresta Neon V2" com Fundo Preto Suave:
+    Fundo Geral da Página: #0A0A0A (Preto Suave)
+    Fundo Elementos (Nav, Footer): #000000 (Preto)
+    Fundo Cards (Posts Lista, Conteúdo Post): #083e12 (Verde Floresta Escuro)
+    Texto Principal: #FFFFFF (Branco)
+    Destaque Primário (Títulos, Botões): #1afe49 (Verde Neon)
+    Destaque Secundário (Links, Hovers): #8386f5 (Lilás Claro)
+    Acento/Bordas: #3d43b4 (Azul Médio)
+*/
+
+/* --- IMPORTAÇÃO DE FONTE --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+/* --- ESTILOS GERAIS --- */
+body.contact-page-theme {
+    background-color: #0A0A0A;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    cursor: auto; /* Garante o cursor padrão do sistema */
+    overflow-x: hidden;
+}
+
+/* --- ESTILOS DO CURSOR PERSONALIZADO REMOVIDOS --- */
+/* #creeperCursor, .trail-dot, @keyframes fadeOutTrailContact foram removidos */
+
+/* --- CONTAINER PRINCIPAL --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAVEGAÇÃO --- */
+body.contact-page-theme nav {
+    background-color: #000000;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid #1afe49;
+}
+
+body.contact-page-theme nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.contact-page-theme nav li {
+    margin: 0 15px;
+}
+
+body.contact-page-theme nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+body.contact-page-theme nav a:hover,
+body.contact-page-theme nav a.active {
+    color: #1afe49;
+    background-color: rgba(26, 254, 73, 0.1);
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px #1afe49;
+}
+
+/* --- CABEÇALHO DA PÁGINA DO BLOG (contact.html) --- */
+.page-header-blog {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #1afe49;
+}
+
+.page-header-blog h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #1afe49;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 10px rgba(26, 254, 73, 0.6);
+}
+
+.page-header-blog .subtitle {
+    font-size: 1.3em;
+    color: #8386f5;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- CONTEÚDO PRINCIPAL DO BLOG (contact.html e páginas de post) --- */
+.blog-content {
+    padding: 20px 0;
+}
+
+/* Grid de Posts (contact.html) */
+.blog-content .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.blog-content .post-card {
+    background-color: #083e12;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #3d43b4;
+}
+
+.blog-content .post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(26, 254, 73, 0.4);
+}
+
+.blog-content .post-card.upcoming-post {
+    background-color: #0A0A0A;
+    border: 1px dashed #3d43b4;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+.blog-content .post-card.upcoming-post .post-card-content {
+    text-align: center;
+}
+.blog-content .post-card.upcoming-post .post-title {
+    color: #8386f5;
+}
+
+.blog-content .post-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-content .post-card.no-image .post-card-image { display: none; }
+
+.blog-content .post-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content .post-card .post-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6em;
+    margin: 0 0 15px 0;
+}
+
+.blog-content .post-card .post-title a {
+    color: #1afe49;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.blog-content .post-card .post-title a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #8386f5;
+}
+
+.blog-content .post-card .post-excerpt {
+    color: #F0F0F0;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.blog-content .post-meta {
+    font-size: 0.85em;
+    color: #8386f5;
+    margin-bottom: 20px;
+    display: flex; /* Para alinhar data e categorias na mesma linha se necessário */
+    flex-wrap: wrap; /* Permite que categorias quebrem a linha */
+    gap: 5px 15px; /* Espaço entre data/categorias e entre categorias */
+}
+
+.blog-content .post-meta .post-date {
+    /* margin-right: 15px; Removido para usar gap */
+}
+
+.blog-content .post-meta .post-category a {
+    color: #8386f5;
+    text-decoration: none;
+    background-color: rgba(61, 67, 180, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Evita que o nome da categoria quebre no meio */
+}
+
+/* NOVO: Adiciona o '#' antes da categoria */
+.blog-content .post-meta .post-category a::before {
+    content: "#";
+    margin-right: 2px; /* Pequeno espaço entre o # e o texto */
+    color: #1afe49; /* Cor do # (Destaque Primário - Verde Neon) */
+}
+
+.blog-content .post-meta .post-category a:hover {
+    background-color: #8386f5;
+    color: #0A0A0A;
+}
+.blog-content .post-meta .post-category a:hover::before {
+    color: #0A0A0A; /* Muda a cor do # no hover também */
+}
+
+
+.blog-content .read-more-btn {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #1afe49;
+    color: #0A0A0A;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.blog-content .read-more-btn:hover {
+    background-color: #8386f5;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(131, 134, 245, 0.5);
+}
+
+/* --- ESTILOS PARA PÁGINA DE POST INDIVIDUAL (post1.html, post2.html) --- */
+.single-post-content .full-post {
+    background-color: #083e12;
+    padding: 35px 45px;
+    border-radius: 12px;
+    border: 1px solid #3d43b4;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 30px rgba(26, 254, 73, 0.15);
+}
+
+.single-post-content .post-full-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #1afe49;
+}
+
+.single-post-content .post-full-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #1afe49;
+    font-size: 2.6em;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 8px rgba(26, 254, 73, 0.6);
+    line-height: 1.3;
+}
+
+.single-post-content .post-meta-full {
+    font-size: 0.95em;
+    color: #8386f5;
+    display: flex; /* Para alinhar categorias na mesma linha */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 10px; /* Espaçamento entre os elementos de metadados */
+}
+.single-post-content .post-meta-full .post-date {
+    white-space: nowrap;
+}
+.single-post-content .post-meta-full .post-category a {
+    color: #8386f5;
+    text-decoration: none;
+    background-color: rgba(61, 67, 180, 0.15); /* Fundo um pouco mais sutil */
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em; /* Ajuste de tamanho para tags */
+    white-space: nowrap;
+}
+.single-post-content .post-meta-full .post-category a:hover {
+    text-decoration: none; /* Remove sublinhado do hover */
+    background-color: #8386f5;
+    color: #0A0A0A;
+}
+/* NOVO: Adiciona o '#' antes da categoria na página do post também */
+.single-post-content .post-meta-full .post-category a::before {
+    content: "#";
+    margin-right: 2px;
+    color: #1afe49; /* Cor do # (Destaque Primário - Verde Neon) */
+}
+.single-post-content .post-meta-full .post-category a:hover::before {
+    color: #0A0A0A;
+}
+
+
+/* Imagem de destaque do post - removida do CSS se você não for usá-la no HTML */
+/* Se você decidir adicionar .post-full-image de volta ao HTML, pode precisar destes estilos:
+.single-post-content .post-full-image {
+    margin-bottom: 35px;
+    text-align: center;
+}
+.single-post-content .post-full-image img {
+    max-width: 100%; // Ou 50% como tinhas antes se preferires menor
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #3d43b4;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+*/
+
+.single-post-content .post-full-body {
+    color: #F0F0F0;
+    font-size: 1.1em;
+}
+
+.single-post-content .post-full-body p {
+    text-align: justify; /* TEXTO JUSTIFICADO AQUI */
+    margin-bottom: 1.5em;
+}
+
+.single-post-content .post-full-body strong,
+.single-post-content .post-full-body b {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.single-post-content .post-full-body h2,
+.single-post-content .post-full-body h3,
+.single-post-content .post-full-body h4, /* Adicionando h4 e h5 para consistência */
+.single-post-content .post-full-body h5 {
+    font-family: 'Orbitron', sans-serif;
+    color: #8386f5; /* Lilás para subtítulos internos como padrão */
+    margin-top: 35px;
+    margin-bottom: 18px;
+    border-bottom: 1px dashed #3d43b4;
+    padding-bottom: 10px;
+}
+.single-post-content .post-full-body h2 { font-size: 1.8em; }
+.single-post-content .post-full-body h3 { font-size: 1.8em; color: #1afe49; border-bottom-color: #1afe49;} /* h3 em Verde Neon */
+.single-post-content .post-full-body h4 { font-size: 1.8em; }
+.single-post-content .post-full-body h5 { font-size: 1.8em; color: #1afe49; border-bottom-color: #1afe49;} /* h5 em Verde Neon */
+
+
+.single-post-content .post-full-body blockquote {
+    border-left: 4px solid #1afe49;
+    margin: 25px 0 25px 25px;
+    padding: 15px 25px;
+    background-color: rgba(4, 19, 72, 0.4);
+    font-style: italic;
+    color: #E0E0E0;
+    border-radius: 0 8px 8px 0;
+}
+.single-post-content .post-full-body blockquote cite {
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    color: #8386f5;
+}
+
+.single-post-content .post-full-body ul,
+.single-post-content .post-full-body ol {
+    padding-left: 25px; /* Reduzido um pouco o padding para alinhar melhor com o ::before */
+    margin-bottom: 20px;
+    list-style-type: none; /* Remove marcadores padrão se vamos usar ::before */
+}
+.single-post-content .post-full-body li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Espaço para marcador customizado */
+    position: relative;
+}
+.single-post-content .post-full-body ul li::before {
+    content: '▶';
+    position: absolute;
+    left: 0px; /* Alinha o marcador com o padding-left do li */
+    top: 1px;
+    color: #1afe49; /* Verde Neon */
+    font-size: 0.8em;
+}
+
+
+.single-post-content .back-to-hub {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* --- RODAPÉ --- */
+body.contact-page-theme footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 30px;
+    background-color: #000000;
+    border-top: 2px solid #1afe49;
+}
+
+body.contact-page-theme .social-links {
+    margin-bottom: 20px;
+}
+
+body.contact-page-theme .social-links a {
+    text-decoration: none;
+    margin: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+body.contact-page-theme .social-links img.social-icon {
+    width: 100px;
+    height: 100px;
+    filter: grayscale(30%) brightness(1.3);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+body.contact-page-theme .social-links a:hover img.social-icon {
+    filter: grayscale(0%) brightness(1) drop-shadow(0 0 8px #1afe49);
+    transform: scale(1.15);
+}
+
+body.contact-page-theme .copyright-notice p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #8386f5;
+    letter-spacing: 0.5px;
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    body.contact-page-theme { font-size: 16px; }
+
+    body.contact-page-theme nav ul { justify-content: space-around; }
+    body.contact-page-theme nav li { margin: 0 5px; }
+    body.contact-page-theme nav a { font-size: 16px; padding: 6px 8px; letter-spacing: 0.5px;}
+
+    .page-header-blog h1 { font-size: 2.2em; }
+    .page-header-blog .subtitle { font-size: 1.1em; }
+
+    .blog-content .posts-grid { grid-template-columns: 1fr; gap: 25px; }
+    .blog-content .post-card .post-title { font-size: 1.4em; }
+
+    .single-post-content .full-post {
+        padding: 25px 20px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .single-post-content .post-full-header h1 { font-size: 1.8em; }
+    .single-post-content .post-full-body { font-size: 1em; }
+    .single-post-content .post-full-body h2,
+    .single-post-content .post-full-body h3,
+    .single-post-content .post-full-body h4,
+    .single-post-content .post-full-body h5 { font-size: 1.4em; } /* Generalizando para h4 e h5 também */
+    /* NOVO: Estilo para a linha horizontal <hr> dentro dos posts */
+.single-post-content .post-full-body hr.post-divider {
+    border: 0; /* Remove a borda padrão do <hr> */
+    height: 2px; /* Altura da linha */
+    /* Cria uma linha com gradiente usando a sua cor de Acento (Azul Médio) */
+    /* O gradiente vai de transparente, para a cor, e de volta para transparente */
+    background-image: linear-gradient(to right, rgba(61, 100, 180, 0), rgba(61, 67, 180, 0.75), rgba(61, 100, 180, 0));
+    margin: 40px 0; /* Espaçamento vertical da linha (40px acima e abaixo) */
+}
+
+
+    body.contact-page-theme .social-links img.social-icon { width: 35px; height: 35px; }
+}
